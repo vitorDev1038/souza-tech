@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-brand-black text-white font-sans antialiased;
+    overflow-x: hidden;
+  }
+
+  /* Focus styles for accessibility */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-blue rounded;
+  }
+
+  /* Reduce motion support */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-brand-black-2;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-brand-dark-border rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-brand-blue/50;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-white leading-tight;
+  }
+
+  .section-subtitle {
+    @apply text-brand-gray text-lg mt-4 max-w-2xl;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-blue text-white font-semibold rounded-lg
+           hover:bg-blue-500 active:bg-blue-700
+           transition-all duration-200 ease-in-out
+           focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-transparent text-white font-semibold rounded-lg
+           border border-brand-dark-border
+           hover:border-brand-blue/50 hover:bg-brand-dark-card
+           transition-all duration-200 ease-in-out
+           focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-blue;
+  }
+
+  .btn-whatsapp {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 font-semibold rounded-lg
+           bg-[#25D366] text-white
+           hover:bg-[#1ebe5a] active:bg-[#18a74f]
+           transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-brand-dark-card border border-brand-dark-border rounded-xl p-6
+           hover:border-brand-blue/30 transition-all duration-300;
+  }
+
+  .input-field {
+    @apply w-full bg-brand-black-2 border border-brand-dark-border text-white placeholder-brand-gray/60
+           rounded-lg px-4 py-3 text-sm
+           focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue/30
+           transition-colors duration-200;
+  }
+
+  .input-error {
+    @apply border-red-500 focus:border-red-500 focus:ring-red-500/30;
+  }
+
+  .label-field {
+    @apply block text-sm font-medium text-brand-gray mb-1.5;
+  }
+
+  .error-message {
+    @apply text-red-400 text-xs mt-1 flex items-center gap-1;
+  }
+
+  .blue-accent {
+    @apply text-brand-blue;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-blue to-brand-cyan bg-clip-text text-transparent;
+  }
+
+  /* Animated underline for section badge */
+  .badge {
+    @apply inline-flex items-center gap-2 text-brand-blue text-sm font-semibold tracking-wider uppercase
+           border border-brand-blue/20 bg-brand-blue/5 px-3 py-1.5 rounded-full;
+  }
+
+  /* Divider line */
+  .divider {
+    @apply border-t border-brand-dark-border;
+  }
+}
