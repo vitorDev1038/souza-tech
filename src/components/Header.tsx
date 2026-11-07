@@ -8,6 +8,7 @@ const navLinks = [
   { label: 'Serviços', href: '#servicos' },
   { label: 'Como funciona', href: '#como-funciona' },
   { label: 'Garantia', href: '#garantia' },
+  { label: 'Localização', href: '#localizacao' },
   { label: 'Orçamento', href: '#orcamento' },
 ]
 

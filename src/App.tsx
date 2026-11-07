@@ -8,6 +8,7 @@ import { DifferentialsSection } from './components/DifferentialsSection'
 import { WarrantySection } from './components/WarrantySection'
 import { QuoteForm } from './components/QuoteForm'
 import { FAQSection } from './components/FAQSection'
+import { LocationSection } from './components/LocationSection'
 import { Footer } from './components/Footer'
 import { FloatingWhatsApp } from './components/FloatingWhatsApp'
 import { services } from './data/services'
@@ -53,6 +54,7 @@ export default function App() {
         <WarrantySection />
         <QuoteForm initialService={preselectedService} />
         <FAQSection />
+        <LocationSection />
       </main>
 
       <Footer />

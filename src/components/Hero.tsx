@@ -1,5 +1,6 @@
 import { ArrowRight, MapPin, Truck } from 'lucide-react'
 import { company } from '../config/company'
+import { IPhoneAnimation } from './IPhoneAnimation'
 
 function scrollToSection(id: string) {
   const el = document.querySelector(id)
@@ -118,43 +119,9 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Hero phone illustration */}
+        {/* Hero phone — iPhone 3D girando */}
         <div className="mt-16 flex justify-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
-          <div className="relative">
-            {/* Glow */}
-            <div
-              className="absolute inset-0 blur-3xl opacity-30"
-              style={{ background: 'radial-gradient(circle, #007BFF 0%, transparent 70%)' }}
-              aria-hidden="true"
-            />
-            {/* Phone mockup */}
-            <div className="relative bg-brand-dark-card border border-brand-dark-border rounded-[2.5rem] w-48 h-96 flex flex-col items-center justify-center shadow-2xl shadow-brand-blue/10">
-              {/* Notch */}
-              <div className="absolute top-3 left-1/2 -translate-x-1/2 w-20 h-5 bg-brand-black rounded-full" aria-hidden="true" />
-              {/* Screen content */}
-              <div className="flex flex-col items-center gap-4 px-6">
-                <div className="w-12 h-12 rounded-2xl bg-brand-blue/20 border border-brand-blue/30 flex items-center justify-center">
-                  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#007BFF" strokeWidth="1.5" aria-hidden="true">
-                    <rect x="5" y="2" width="14" height="20" rx="2" />
-                    <circle cx="12" cy="18" r="1" fill="#007BFF" stroke="none" />
-                    <path d="M12 7 L10 11 H12.5 L10 16" stroke="#00D4FF" strokeWidth="1.5" strokeLinecap="round" />
-                  </svg>
-                </div>
-                <div className="text-center">
-                  <p className="text-xs font-semibold text-white">SOUZA TECH</p>
-                  <p className="text-[10px] text-brand-gray mt-0.5">Assistência Técnica</p>
-                </div>
-                {/* Decorative bars */}
-                <div className="w-full flex flex-col gap-1.5" aria-hidden="true">
-                  <div className="h-1.5 bg-brand-blue/30 rounded-full w-full" />
-                  <div className="h-1.5 bg-brand-blue/20 rounded-full w-3/4" />
-                  <div className="h-1.5 bg-brand-blue/10 rounded-full w-1/2" />
-                </div>
-              </div>
-              {/* Home bar */}
-              <div className="absolute bottom-3 w-20 h-1 bg-brand-dark-border rounded-full" aria-hidden="true" />
-            </div>
-          </div>
+          <IPhoneAnimation />
         </div>
       </div>
 
